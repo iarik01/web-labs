@@ -46,6 +46,11 @@ module.exports = {
         chunks: ['index'],
         filename: 'projects.html'
       }),
+      new CopyWebpackPlugin({
+        patterns: [
+          { from: 'src/images', to: 'images' },
+        ],
+      }),
   ],
   devServer: {
     static: {
