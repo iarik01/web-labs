@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Task – Список задач</title>
+  <link rel="icon" href="images\favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Фиксированная шапка с навигацией и бургер-меню -->
+  <header class="site-header">
+    <div class="burger-menu" id="burgerMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="projects.html">Проекты</a></li>
+        <li><a href="tasks.html" class="active">Список задач</a></li>
+        <li><a href="about.html">О приложении</a></li>
+      </ul>
+    </nav>
+    <!-- Боковая панель для мобильного меню -->
+    <div class="sidebar" id="sidebarMenu">
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="projects.html">Проекты</a></li>
+          <li><a href="tasks.html" class="active">Список задач</a></li>
+          <li><a href="about.html">О приложении</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <h1>Список задач</h1>
+    
+    <!-- Кнопка для открытия модального окна добавления задачи -->
+    <button id="openTaskModal">Добавить задачу</button>
+    
+    <!-- Модальное окно для добавления задачи -->
+    <dialog id="taskModal">
+      <form id="addTaskForm" method="dialog">
+        <h2>Добавить новую задачу</h2>
+        <input type="text" name="taskText" placeholder="Введите текст задачи" required>
+        <div class="modal-buttons">
+          <button type="submit">Добавить</button>
+          <button type="button" id="closeTaskModal">Отмена</button>
+        </div>
+      </form>
+    </dialog>
+    
+    <!-- Контейнер для трёх колонок -->
+    <div class="task-container">
+      <!-- Колонка "Задачи" -->
+      <div class="task-column" id="todoColumn">
+        <h2>Задачи</h2>
+        <div class="task-list" id="todoList">
+          <!-- Здесь будут задачи с начальным статусом -->
+        </div>
+      </div>
+      <!-- Колонка "В работе" -->
+      <div class="task-column" id="inProgressColumn">
+        <h2>В работе</h2>
+        <div class="task-list" id="inProgressList">
+          <!-- Здесь задачи, переведённые из "Задачи" -->
+        </div>
+      </div>
+      <!-- Колонка "Выполненные" -->
+      <div class="task-column" id="completedColumn">
+        <h2>Выполненные</h2>
+        <div class="task-list" id="completedList">
+          <!-- Здесь задачи, переведённые из "В работе" -->
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <script src="script.js"></script>
+  <script src="bundle.js"></script>
+
+</body>
+</html>
